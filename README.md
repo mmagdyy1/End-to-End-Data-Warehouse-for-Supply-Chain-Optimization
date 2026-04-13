@@ -102,7 +102,7 @@ All loads use a **Truncate & Insert (Full Load)** strategy via **Stored Procedur
 
 The warehouse follows the **Medallion Architecture** pattern with three progressive layers:
 
-![High Level Architecture](./docs/images/data_architecture.png)
+![High Level Architecture](docs/data_architecture.png)
 
 | Layer | Storage | Load Strategy | Purpose |
 |-------|---------|---------------|---------|
@@ -114,7 +114,7 @@ The warehouse follows the **Medallion Architecture** pattern with three progress
 
 ## 🔄 Data Flow
 
-![Data Flow](./docs/images/data_flow.png)
+![Data Flow](docs/data_flow.png)
 
 | Source | Bronze → Silver | Gold Output |
 |--------|-----------------|-------------|
@@ -131,7 +131,7 @@ The warehouse follows the **Medallion Architecture** pattern with three progress
 
 CRM and ERP tables are linked via business keys to build unified dimension tables.
 
-![Data Integration](./docs/images/data_integration.png)
+![Data Integration](docs/data_integration.png)
 
 - `crm_sales_details.prd_key` → `crm_prd_info.prd_key`
 - `crm_sales_details.cst_id` → `crm_cust_info.cst_id`
@@ -142,7 +142,7 @@ CRM and ERP tables are linked via business keys to build unified dimension table
 
 ## 📐 Data Model — Star Schema
 
-![Data Model](./docs/images/data_model.png)
+![Data Model](docs/data_model.png)
 
 **`gold.fact_sales`** — order_number · product_key (FK) · customer_key (FK) · order_date · shipping_date · due_date · quantity · price · sales_amount *(= quantity × price)*
 
